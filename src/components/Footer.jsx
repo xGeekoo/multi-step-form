@@ -1,14 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from './UI/Button';
 import { usePage } from '../contexts/PageContext';
 import { useFormCtx } from '../contexts/FormContext';
+import { mediaQueries } from '../styles/mediaQueries';
 
 const StyledFooter = styled.footer`
   background-color: var(--white);
-  padding: 1.5rem 10rem;
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   margin-top: auto;
+
+  ${mediaQueries(
+    css`
+      padding: 1.5rem 5rem;
+    `,
+    'desktop'
+  )}
+
+  ${mediaQueries(
+    css`
+      padding: 1.5rem 10rem;
+    `,
+    'lgDesktop'
+  )}
 `;
 
 function Footer() {
